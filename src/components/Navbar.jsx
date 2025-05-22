@@ -1,0 +1,49 @@
+// ✅ NAVBAR.jsx mejorado con visibilidad y animación fade suave
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import logo from '/src/assets/casamariposa.png';
+
+function Navbar({ visible = true }) {
+  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const hiddenClass = visible
+    ? 'opacity-100 pointer-events-auto'
+    : 'opacity-0 pointer-events-none';
+
+  const navItemClass = (path) =>
+    `px-4 py-2 font-semibold transition-colors duration-300 ${
+      location.pathname === path
+        ? 'text-pink-600'
+        : scrolled
+        ? 'text-gray-800 hover:text-pink-500'
+        : 'text-white hover:text-pink-300'
+    }`;
+
+  return (
+    <nav
+      className={`w-full fixed top-0 left-0 z-50 flex items-center justify-between px-6 py-4 transition-all duration-500 ease-in-out
+        ${scrolled ? 'bg-white/1 backdrop-blur-md shadow-md' : 'bg-transparent'} ${hiddenClass}`}
+    >
+      <Link to="/" className="flex items-center">
+        <img src={logo} alt="Logo Casa Mariposa" className="h-24 w-auto object-contain" />
+      </Link>
+
+      <div className="flex space-x-4">
+        <Link to="/" className={navItemClass('/')}>Inicio</Link>
+        <Link to="/habitaciones" className={navItemClass('/habitaciones')}>Habitaciones</Link>
+        <Link to="/contacto" className={navItemClass('/contacto')}>Contacto</Link>
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;
