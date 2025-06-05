@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/habitaciones" element={<Habitaciones setNavbarVisible={setNavbarVisible} />} />
-        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/contacto" element={<Contacto  setNavbarVisible={setNavbarVisible} />} />
       </Routes>
     </>
   );

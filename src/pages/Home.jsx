@@ -13,28 +13,43 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 
 function Home() {
-  const actividades = [
-    {
-      src: surf,
-      titulo: 'Clases de surf',
-      descripcion: 'Aprende con instructores locales en olas suaves ideales para principiantes.'
-    },
-    {
-      src: surftrips,
-      titulo: 'Surftrips',
-      descripcion: 'Explora otras playas cercanas y vive la emoción del surf en grupo.'
-    },
-    {
-      src: relax,
-      titulo: 'Relájate frente al mar',
-      descripcion: 'Disfruta la cercanía del mar con brisa suave, ideal para leer o meditar.'
-    },
-    {
-      src: snorkel,
-      titulo: 'Snorkel en Playa Panteón',
-      descripcion: 'Descubre coloridos peces y corales en una experiencia submarina inolvidable.'
-    }
-  ];
+ const actividades = [
+  {
+    src: surf,
+    titulo: 'Clases de surf',
+    descripcion: 'Aprende a surfear con instructores locales sobre olas suaves, perfectas para principiantes que buscan confianza y diversión.'
+  },
+  {
+    src: surftrips,
+    titulo: 'Surftrips',
+    descripcion: 'Explora playas cercanas con otros surfistas y vive emocionantes aventuras sobre las olas en grupo.'
+  },
+  {
+    src: relax,
+    titulo: 'Relájate frente al mar',
+    descripcion: 'Disfruta del sonido de las olas, una brisa suave y un entorno sereno para leer, meditar o simplemente desconectar.'
+  },
+  {
+    src: snorkel,
+    titulo: 'Snorkel en Playa Panteón',
+    descripcion: 'Descubre un mundo submarino lleno de coloridos peces y formaciones coralinas en aguas tranquilas y cristalinas.'
+  },
+  {
+    src: surf, // Usa una imagen distinta si tienes
+    titulo: 'Tour en bote',
+    descripcion: 'Según la temporada, podrás ver ballenas, tortugas marinas, delfines y bancos de peces, además de conocer tres playas inolvidables.'
+  },
+  {
+    src: relax, // Reemplázala por una imagen de amanecer si tienes
+    titulo: 'Caminata al amanecer',
+    descripcion: 'Comienza tu día con una caminata tranquila mientras ves salir el sol sobre el horizonte costero.'
+  },
+  {
+    src: snorkel, // Reemplázala por una imagen de paddleboard si tienes
+    titulo: 'Paddleboard',
+    descripcion: 'Recorre las tranquilas aguas de Puerto Ángel de pie sobre una tabla, ideal para ejercitarte y relajarte al mismo tiempo.'
+  }
+];
 
   
 
@@ -43,16 +58,45 @@ function Home() {
   const nextSlide = () => setIndex((prev) => (prev + 1) % actividades.length);
   const prevSlide = () => setIndex((prev) => (prev - 1 + actividades.length) % actividades.length);
 
-  // 👉 Ciclo automático
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 1400); // Cambia cada 1 segundo
 
-    return () => clearInterval(interval); // Limpieza al desmontar
-  }, []);
 
-  return (
+
+
+const sliderMedia = [
+  {
+    tipo: 'imagen',
+    src: playa2,
+    texto: 'Playa Panteón en Puerto Ángel es un lugar tranquilo con aguas cristalinas y arena dorada, perfecto para nadar y relajarse. Rodeada de palmeras y pequeños restaurantes, ofrece una atmósfera acogedora y auténtica para disfrutar el encanto costero de Oaxaca.'
+  },
+  {
+    tipo: 'video',
+   // src: videoDemo,
+    texto: 'Descubre Playa Panteón desde otra perspectiva con este video: naturaleza, mar y cultura combinados en una experiencia visual cautivadora.'
+  },
+  {
+    tipo: 'imagen',
+    src: surf,
+    texto: 'Perfecto para quienes desean tomar clases de surf en olas suaves con instructores locales.'
+  },
+  {
+    tipo: 'imagen',
+    src: relax,
+    texto: 'Un entorno sereno para descansar frente al mar, ideal para leer, meditar o simplemente desconectarte.'
+  }
+];
+
+const [mediaIndex, setMediaIndex] = useState(0);
+const nextMedia = () => setMediaIndex((prev) => (prev + 1) % sliderMedia.length);
+const prevMedia = () => setMediaIndex((prev) => (prev - 1 + sliderMedia.length) % sliderMedia.length);
+
+
+
+
+
+
+
+
+ return (
     <>
       {/* FONDO RESPONSIVO */}
       <div
@@ -94,20 +138,53 @@ function Home() {
           </div>
         </div>
 
-        {/* PLAYA DESCRIPCIÓN */}
-        <section className="relative text-gray-800 py-16 px-6 md:px-20 font-serif">
-          <div className="grid md:grid-cols-2 gap-10 items-center bg-white bg-opacity-80 p-6 rounded-xl">
-            <img src={playa2} alt="Puerto Ángel" className="rounded shadow-lg" />
-            <div>
-              <h2 className="text-3xl font-bold mb-4">Puerto Ángel, Playa Panteón</h2>
-              <p className="text-lg leading-relaxed">
-                Playa Panteón en Puerto Ángel es un lugar tranquilo con aguas cristalinas y arena dorada,
-                perfecto para nadar y relajarse. Rodeada de palmeras y pequeños restaurantes, ofrece una
-                atmósfera acogedora y auténtica para disfrutar el encanto costero de Oaxaca.
-              </p>
-            </div>
-          </div>
-        </section>
+
+
+
+{/* PLAYA DESCRIPCIÓN NUEVO SLIDER */}
+<section className="relative text-gray-800 py-16 px-6 md:px-20 font-serif">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white bg-opacity-80 p-6 rounded-xl">
+
+    {/* SLIDER MEDIA (imagen o video) */}
+    <div className="relative w-full space-y-4">
+      <div className="relative h-96 sm:h-96 bg-gray-100 rounded shadow overflow-hidden">
+        {sliderMedia[mediaIndex].tipo === 'imagen' ? (
+          <img
+            src={sliderMedia[mediaIndex].src}
+            alt={`Slide ${mediaIndex + 1}`}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <video controls className="w-full h-full object-cover rounded">
+            <source src={sliderMedia[mediaIndex].src} type="video/mp4" />
+            Tu navegador no soporta video.
+          </video>
+        )}
+
+        {/* Botones navegación */}
+        <button
+          onClick={prevMedia}
+          className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-3xl bg-black bg-opacity-40 rounded-full px-2"
+        >
+          ‹
+        </button>
+        <button
+          onClick={nextMedia}
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-3xl bg-black bg-opacity-40 rounded-full px-2"
+        >
+          ›
+        </button>
+      </div>
+    </div>
+
+    {/* TEXTO DESCRIPCIÓN */}
+    <div>
+      <h2 className="text-3xl font-bold mb-4">Puerto Ángel, Playa Panteón</h2>
+      <p className="text-lg leading-relaxed">{sliderMedia[mediaIndex].texto}</p>
+    </div>
+  </div>
+</section>
+
 
        {/* CARRUSEL ACTIVIDADES */}
 <section className="py-16 font-serif">

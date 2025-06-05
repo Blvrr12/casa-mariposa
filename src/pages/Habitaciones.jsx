@@ -38,7 +38,7 @@ const departamentos = [
       { icono: FaChair, texto: 'Balcón con vista' }
     ],
     caracteristicas: [
-      'Alebrije es un espacio acogedor y lleno de carácter, decorado con elementos artesanales que reflejan la cultura local. Ofrece una cama matrimonial cómoda y un sofá cama individual, ideal para descansar tras un día en la playa. La cocineta está equipada con utensilios esenciales, un mini refrigerador y ventilador para mayor confort, además de contar con un closet funcional. Todo esto lo convierte en una excelente opción para quienes buscan una experiencia auténtica y tranquila a pocos pasos del mar.'
+      'Alebrije es un espacio acogedor y lleno de carácter, decorado con elementos artesanales. Ofrece una cama matrimonial cómoda y una cama individual, ideal para descansar tras un día en la playa. La cocina está equipada con utensilios esenciales, un mini refrigerador y A/C para mayor confort, además de contar con un closet funcional. Todo esto lo convierte en una excelente opción para quienes buscan una experiencia auténtica y tranquila a pocos pasos del mar.'
     ]
   },
   {
@@ -54,7 +54,7 @@ const departamentos = [
       { icono: FaChair, texto: 'Balcón con vista' }
     ],
     caracteristicas: [
-'Arena es un departamento amplio y luminoso, diseñado para brindar una experiencia fresca y relajante cerca del mar. Cuenta con una cama matrimonial y una cama individual, perfectas para grupos pequeños o familias. Su cocineta equipada, utensilios de cocina y refrigerador grande permiten preparar alimentos con comodidad. Además, incluye ventilador de techo y un closet amplio que aseguran una estancia cómoda y organizada en un ambiente tranquilo y funcional.'      
+'Arena es un departamento amplio y luminoso, diseñado para brindar una experiencia fresca y relajante cerca del mar. Cuenta con una cama matrimonial y una cama individual, perfectas para grupos pequeños o familias. Su cocina equipada, utensilios de cocina y refrigerador permiten preparar alimentos con comodidad.'      
     ]
   }
 ];
