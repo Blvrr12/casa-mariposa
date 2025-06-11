@@ -1,6 +1,6 @@
 // src/components/FondoResponsive.jsx
-import fondoDesktop from '../../assets/fondo1.svg';
-import fondoMobile from '../../assets/celular.svg';
+import fondoDesktop from '../assets/contacto/cinco.jpg';
+import fondoMobile from '../assets/contacto/cinco.jpg';
 
 function FondoResponsive() {
   return (

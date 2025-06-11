@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import {
-  FaSnowflake, FaCoffee, FaShower, FaHiking, FaChair, FaWifi,
-  FaTimes, FaChevronLeft, FaChevronRight
+  FaSnowflake, FaUtensils, FaShower, FaTv,
+  FaWifi, FaTimes, FaChevronLeft, FaChevronRight,
+  FaAirbnb, FaUser, FaExpand
 } from 'react-icons/fa';
 
-import fondoDesktop from '../assets/fondo1.svg';
-import fondoMobile from '../assets/celular.svg';
+import fondoDesktop from '../assets/contacto/cinco.jpg';
+import fondoMobile from '../assets/contacto/cinco.jpg';
 import comedor from '../assets/habitaciones/depto2/comedordepa2.jpg';
-import { FaPhone, FaWhatsapp, FaAngleLeft, FaAngleRight, FaUser } from 'react-icons/fa';
 
 // IMÁGENES DE ARENA
 import arena1 from '../assets/habitaciones/depto2/depa2_1.jpg';
@@ -24,57 +24,112 @@ import alebrije1 from '../assets/habitaciones/depto1/depa.jpg';
 import alebrije2 from '../assets/habitaciones/depto1/depa01.jpg';
 import salaAlebrije from '../assets/habitaciones/depto1/saladepa1.1.jpeg';
 import banoAlebrije from '../assets/habitaciones/depto1/baño.jpeg';
-import balconAlebrije from '../assets/habitaciones/depto1/balcondepa1.webp';
+import balconAlebrije from '../assets/habitaciones/depto1/balcondepa1.png';
+
+
+//IMAGENES DE CAMILA
+import cami1 from '../assets/habitaciones/camila/cami1.jpg';
+import cami2 from '../assets/habitaciones/camila/cami2.jpg';
+import cami3 from '../assets/habitaciones/camila/cami3.jpg';
+import cami4 from '../assets/habitaciones/camila/cami4.jpg';
+import camicollage from '../assets/habitaciones/camila/camicollage.jpg';
+
+//IMAGENES DE CARMELO
+import proximamente from '../assets/habitaciones/carmelo/proximament.png'; // Reemplazar
+//IMAGENES DE BELLA
+import bella from '../assets/habitaciones/bella/bella.jpg';
+import bella2 from '../assets/habitaciones/bella/bella2.jpg';
+
 
 const departamentos = [
   {
     nombre: 'Alebrije',
     imagenes: [alebrije1, alebrije2, salaAlebrije, banoAlebrije, balconAlebrije],
-    descripcion: 'Un rincón lleno de color, tranquilidad y detalles artesanales...',
-    servicios: [
-      { icono: FaSnowflake, texto: 'A/C' },
-      { icono: FaWifi, texto: 'WiFi' },
+    descripcion: ' Alebrije es un espacio lleno de color y tranquilidad, cuidadosamente decorado con detalles artesanales que reflejan la cultura local. Ofrece una cama matrimonial y una cama individual, garantizando un descanso placentero. La cocina está completamente equipada con utensilios esenciales y un mini refrigerador. Además, cuenta con aire acondicionado, WiFi Starlink, baño completo y closet, lo que lo convierte en una opción ideal para una estancia auténtica y cómoda, a solo unos metros de la playa.'
+    ,servicios: [
+      { icono: FaSnowflake, texto: 'Aire acondicionado' },
+      { icono: FaUtensils, texto: 'Cocina equipada' },
       { icono: FaShower, texto: 'Baño completo' },
-      { icono: FaChair, texto: 'Balcón con vista' }
+      { icono: FaTv, texto: 'Televisión' },
+      { icono: FaWifi, texto: 'WiFi Starlink' }
     ],
-    caracteristicas: [
-      'Alebrije es un espacio acogedor y lleno de carácter, decorado con elementos artesanales. Ofrece una cama matrimonial cómoda y una cama individual, ideal para descansar tras un día en la playa. La cocina está equipada con utensilios esenciales, un mini refrigerador y A/C para mayor confort, además de contar con un closet funcional. Todo esto lo convierte en una excelente opción para quienes buscan una experiencia auténtica y tranquila a pocos pasos del mar.'
-    ]
+    airbnbLink: 'https://www.airbnb.mx/rooms/1394264673627582250'
   },
   {
     nombre: 'Arena',
     imagenes: [arena1, comedorArena, comedorArena2, salaArena, salaArena2, balconArena, balconArena2, banoArena],
-    descripcion: 'Espacioso, iluminado y con un ambiente fresco...',
-    servicios: [
-      { icono: FaSnowflake, texto: 'A/C' },
-      { icono: FaCoffee, texto: 'Cafetera' },
-      { icono: FaWifi, texto: 'WiFi' },
+    descripcion: 'Arena es un departamento espacioso, iluminado y con un ambiente fresco, diseñado para una relajante escapada cerca del mar. Dispone de una cómoda cama matrimonial y una cama individual, ideal para familias pequeñas o grupos. Su cocina está totalmente equipada con utensilios y refrigerador, facilitando la preparación de comidas. Ofrece aire acondicionado, WiFi Starlink, baño completo y televisión para tu confort. Su cercanía a la playa lo hace perfecto para quienes buscan comodidad.'
+     ,servicios: [
+      { icono: FaSnowflake, texto: 'Aire acondicionado' },
+      { icono: FaUtensils, texto: 'Cocina equipada' },
       { icono: FaShower, texto: 'Baño completo' },
-      { icono: FaHiking, texto: 'Cerca del mar' },
-      { icono: FaChair, texto: 'Balcón con vista' }
+      { icono: FaTv, texto: 'Televisión' },
+      { icono: FaWifi, texto: 'WiFi Starlink' }
     ],
-    caracteristicas: [
-'Arena es un departamento amplio y luminoso, diseñado para brindar una experiencia fresca y relajante cerca del mar. Cuenta con una cama matrimonial y una cama individual, perfectas para grupos pequeños o familias. Su cocina equipada, utensilios de cocina y refrigerador permiten preparar alimentos con comodidad.'      
-    ]
+    airbnbLink: 'https://www.airbnb.mx/rooms/782629556146528636'
+  },
+
+  // NUEVAS HABITACIONES (ESTRUCTURA - COMPLETA CON TUS DATOS)
+  {
+    nombre: 'Camila',
+    imagenes: [camicollage,cami2,cami3,cami4,cami1],
+    descripcion: 'Habitación Camila amplia para familias o amigos para no estar separados.',
+    servicios: [
+      { icono: FaWifi, texto: 'WiFi Starlink' },
+      // ... otros servicios específicos
+      { icono: FaWifi, texto: 'WiFi Starlink' },
+      { icono: FaUtensils, texto: 'Cocina compartida' },
+      { icono: FaShower, texto: '2 Baños compartidos' }
+    ],
+    airbnbLink: 'LINK_AIRBNB_CAMILA'
+  },
+  {
+    nombre: 'Carmelo',
+    imagenes: [proximamente],
+    descripcion: 'Habitación Carmelo con [describe]. Capacidad: 4 personas.',
+    servicios: [
+      { icono: FaSnowflake, texto: 'Aire acondicionado' },
+      // servicios adicionales
+      { icono: FaWifi, texto: 'WiFi Starlink' },
+      { icono: FaUtensils, texto: 'Cocina compartida' },
+      { icono: FaShower, texto: '2 Baños compartidos' }
+    ],
+    airbnbLink: 'https://www.airbnb.mx/rooms/1200011469900113807?source_impression_id=p3_1749671674_P3CrUz_pTFPvN8zd'
+  },
+  {
+    nombre: 'Bella',
+    imagenes: [bella2, bella],
+    descripcion: 'Habitación Bella con [describe]. Capacidad: 2 personas.',
+    servicios: [
+      // servicios adicionales
+      { icono: FaWifi, texto: 'WiFi Starlink' },
+      { icono: FaUtensils, texto: 'Cocina compartida' },
+      { icono: FaShower, texto: '2 Baños compartidos' }
+    ],
+    airbnbLink: 'LINK_AIRBNB_BELLA'
   }
 ];
 
 export default function Habitaciones({ setNavbarVisible }) {
   const [activo, setActivo] = useState(null);
   const [imagenIndex, setImagenIndex] = useState(0);
-  const [infoIndex, setInfoIndex] = useState(0);
+  const [expandedImageSrc, setExpandedImageSrc] = useState(null);
 
-  const handlePrev = () => setImagenIndex((prev) =>
+  const handlePrev = () => setImagenIndex((prev) => 
     prev === 0 ? departamentos[activo].imagenes.length - 1 : prev - 1
   );
 
-  const handleNext = () => setImagenIndex((prev) =>
+  const handleNext = () => setImagenIndex((prev) => 
     prev === departamentos[activo].imagenes.length - 1 ? 0 : prev + 1
   );
 
+  const openExpandedImage = (src) => setExpandedImageSrc(src);
+  const closeExpandedImage = () => setExpandedImageSrc(null);
+
+
+  
   return (
     <div className="w-full min-h-screen font-serif relative z-0 overflow-hidden">
-
       {/* FONDO RESPONSIVO */}
       <div
         className="sm:hidden fixed inset-0 -z-10"
@@ -85,7 +140,7 @@ export default function Habitaciones({ setNavbarVisible }) {
         style={{ backgroundImage: `url(${fondoDesktop})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}
       />
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <div className="h-screen bg-cover bg-center flex items-center justify-start relative" style={{ backgroundImage: `url(${comedor})` }}>
         <div className="bg-black bg-opacity-40 w-full h-full absolute top-0 left-0 z-0" />
         <div className="relative z-10 px-10 max-w-2xl text-white">
@@ -95,7 +150,7 @@ export default function Habitaciones({ setNavbarVisible }) {
         </div>
       </div>
 
-      {/* CUADROS */}
+      {/* TARJETAS DE HABITACIONES */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-6 md:px-20 py-16">
         {departamentos.map((depa, i) => (
           <div
@@ -104,162 +159,122 @@ export default function Habitaciones({ setNavbarVisible }) {
             onClick={() => {
               setActivo(i);
               setImagenIndex(0);
-              setInfoIndex(0);
               document.body.style.overflow = 'hidden';
-              setNavbarVisible(false); // ⬅️ Oculta el menú al hacer clic
+              setNavbarVisible(false);
             }}
           >
-            <img src={depa.imagenes[0]} alt={depa.nombre} className="w-full h-64 object-cover" />
-            <div className="p-4 flex flex-col gap-2">
-  <h2 className="text-2xl font-bold text-gray-800">{depa.nombre}</h2>
-
-  {/* 💰 Precio por noche */}
-  <p className="text-sm text-gray-700"><strong>$1,200 Mxn</strong> por noche</p>
-
-  {/* 👥 Icono y cantidad de personas */}
-  <div className="flex items-center gap-2 text-gray-700 text-sm">
-<FaUser className="text-lg" />
-<span>Hasta 3 personas</span>
-  </div>
-
-  {/* ℹ️ Descripción corta */}
-  <p className="italic text-gray-600 text-sm">{depa.descripcion}</p>
-
-  {/* 📎 Texto de acción */}
-  <span className="text-xs text-gray-500 mt-2">Haz clic para ver más detalles</span>
-</div>
-
+            <div className="relative">
+              <img src={depa.imagenes[0]} alt={depa.nombre} className="w-full h-64 object-cover" />
+              <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white p-1 rounded text-xs flex items-center gap-1">
+                <FaExpand size={10} /> Clic para agrandar
+              </div>
             </div>
-          
+            <div className="p-4 flex flex-col gap-2">
+              <h2 className="text-2xl font-bold text-gray-800">{depa.nombre}</h2>
+              <div className="flex items-center gap-2 text-gray-700 text-sm">
+                <FaUser className="text-lg" />
+                <span>Máximo 3 personas</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {depa.servicios.slice(0, 4).map((servicio, i) => (
+                  <div key={i} className="flex items-center gap-1 text-xs bg-gray-100 px-2 py-1 rounded">
+                    <servicio.icono className="text-xs" />
+                    <span>{servicio.texto}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         ))}
       </div>
 
-      {/* EXPANDIDO */}
-
-
+      {/* MODAL DE DETALLES */}
       {activo !== null && (
-  <div className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm z-50 flex items-center justify-center px-2 sm:px-4">
-    <div className={`relative w-full h-screen max-w-5xl max-h-[95vh] rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row ${infoIndex === 1 ? 'bg-[#f8f1e5]' : 'bg-white'}`}>
+        <div className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm z-50 flex items-center justify-center px-2 sm:px-4">
+          <div className="relative w-full h-screen max-w-5xl max-h-[95vh] rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row bg-white">
+            {/* BOTÓN CERRAR */}
+            <button
+              className="absolute top-2 right-3 sm:top-4 sm:right-4 text-red-600 text-3xl z-20"
+              onClick={() => {
+                setActivo(null);
+                document.body.style.overflow = 'auto';
+                setNavbarVisible(true);
+              }}
+              aria-label="Cerrar detalles del departamento"
+            >
+              <FaTimes />
+            </button>
 
-      {/* ❌ BOTÓN DE CERRAR */}
-      <button
-        className="absolute top-2 right-3 sm:top-4 sm:right-4 text-red-600 text-3xl z-10"
-        onClick={() => {
-          setActivo(null);
-          document.body.style.overflow = 'auto';
-          setNavbarVisible(true);
-        }}
-      >
-        <FaTimes />
-      </button>
-
-      {/* 🖼️ IMAGEN + FLECHAS */}
-      <div className="relative w-full md:w-2/3 h-[50vh] md:h-auto">
-        <img
-          src={departamentos[activo].imagenes[imagenIndex]}
-          className="w-full h-full object-cover"
-          alt="Vista"
-        />
-        <button onClick={handlePrev} className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-40 rounded-full px-2">
-          <FaChevronLeft />
-        </button>
-        <button onClick={handleNext} className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-40 rounded-full px-2">
-          <FaChevronRight />
-        </button>
-      </div>
-
-      {/* 📋 CONTENIDO FIJO + SCROLL INTERNO */}
-    
-      <div className="w-full md:w-1/3 flex flex-col relative h-full">
-  <div className="flex-1 px-6 pt-6 pb-4 overflow-hidden">
-    <div className="overflow-y-auto max-h-[calc(100vh-200px)] pr-2">
-      <h2 className="text-3xl font-bold text-gray-800">{departamentos[activo].nombre}</h2>
-
-      {infoIndex === 0 && (
-        <p className="text-gray-700 my-4 text-sm leading-relaxed">
-          {departamentos[activo].descripcion}
-        </p>
-      )}
-
-      {infoIndex === 0 ? (
-        <div className="grid grid-cols-3 gap-4 text-center text-gray-700 mt-6">
-          {departamentos[activo].servicios.map((servicio, i) => (
-            <div key={i} className="flex flex-col items-center">
-              <servicio.icono className="text-2xl mb-1" />
-              <span className="text-xs">{servicio.texto}</span>
+            {/* GALERÍA DE IMÁGENES */}
+            <div className="relative w-full md:w-2/3 h-[50vh] md:h-auto">
+              <img
+                src={departamentos[activo].imagenes[imagenIndex]}
+                className="w-full h-full object-cover cursor-zoom-in"
+                alt="Vista del departamento"
+                onClick={() => openExpandedImage(departamentos[activo].imagenes[imagenIndex])}
+              />
+              <button 
+                onClick={handlePrev} 
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-40 rounded-full px-2 py-1" 
+                aria-label="Imagen anterior"
+              >
+                <FaChevronLeft />
+              </button>
+              <button 
+                onClick={handleNext} 
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-40 rounded-full px-2 py-1" 
+                aria-label="Imagen siguiente"
+              >
+                <FaChevronRight />
+              </button>
             </div>
-          ))}
-        </div>
-      ) : (
-        departamentos[activo].caracteristicas.length === 1 ? (
-          <div className="text-gray-700 text-sm mt-6 leading-relaxed">
-            {departamentos[activo].caracteristicas[0]}
+
+            {/* DETALLES Y BOTÓN DE RESERVA */}
+            <div className="w-full md:w-1/3 flex flex-col relative h-full p-6">
+              <div className="flex-1 overflow-y-auto">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">{departamentos[activo].nombre}</h2>
+                <p className="text-gray-700 mb-6">{departamentos[activo].descripcion}</p>
+              </div>
+
+              {/* BOTÓN DE RESERVA */}
+              <div className="mt-auto flex justify-end">
+                <a
+                  href={departamentos[activo].airbnbLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-red-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-600 transition flex items-center gap-2 text-sm font-semibold"
+                  aria-label={`Reservar ${departamentos[activo].nombre} en Airbnb`}
+                >
+                  <FaAirbnb className="text-lg" /> Reservar
+                </a>
+              </div>
+            </div>
           </div>
-        ) : (
-          <ul className="text-gray-700 text-sm mt-6 list-disc list-inside space-y-1">
-            {departamentos[activo].caracteristicas.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        )
+        </div>
       )}
-    </div>
-  </div>
 
-  {/* Botones de contacto */}
-<div className="absolute bottom-4 left-4 flex flex-row gap-2 text-sm z-10">
-  <a
-    href="https://wa.me/529516110942?text=Hola%2C%20quiero%20reservar%20el%20departamento%20Alebrije"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-green-500 text-white px-4 py-1 rounded shadow hover:bg-green-600 transition flex items-center gap-2"
-  >
-    <FaWhatsapp /> WhatsApp
-  </a>
-  <a
-    href="tel:+529516110942"
-    className="bg-blue-500 text-white px-4 py-1 rounded shadow hover:bg-blue-600 transition flex items-center gap-2"
-  >
-    <FaPhone /> Llamar
-  </a>
-</div>
-
-{/* Flechas para alternar info */}
-<div className="absolute bottom-4 right-4 flex gap-4 items-center text-xl text-gray-700 z-10">
-  <button
-    onClick={() => setInfoIndex(0)}
-    className={`p-2 rounded-full border ${infoIndex === 0 ? 'bg-black text-white' : 'bg-white'}`}
-    aria-label="Servicios"
-  >
-    <FaAngleLeft />
-  </button>
-  <button
-    onClick={() => setInfoIndex(1)}
-    className={`p-2 rounded-full border ${infoIndex === 1 ? 'bg-black text-white' : 'bg-white'}`}
-    aria-label="Detalles"
-  >
-    <FaAngleRight />
-  </button>
-</div>
-
-
-</div>
-
-    </div>
-  </div>
-)}
-
-
-
-
-    {/**/}
-
-
-
-
-
-
-
+      {/* MODAL DE IMAGEN AMPLIADA */}
+      {expandedImageSrc && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[100]"
+          onClick={closeExpandedImage}
+        >
+          <div className="relative max-w-full max-h-full" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={expandedImageSrc}
+              alt="Imagen expandida"
+              className="max-w-full max-h-screen object-contain cursor-zoom-out"
+            />
+            <button
+              onClick={closeExpandedImage}
+              className="absolute top-4 right-4 text-white text-4xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition"
+              aria-label="Cerrar imagen"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

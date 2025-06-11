@@ -1,5 +1,5 @@
-import fondoDesktop from '../assets/fondo1.svg';
-import fondoMobile from '../assets/celular.svg';
+import fondoDesktop from '../assets/contacto/cinco.jpg';
+import fondoMobile from '../assets/contacto/cinco.jpg';
 import playaBg from '../assets/backgrounds/playa.png';
 import surf from '../assets/backgrounds/surf.png';
 import surftrips from '../assets/backgrounds/surftrip.png';
@@ -42,13 +42,14 @@ const getYouTubeEmbedUrl = (url) => {
 function Home() {
     // Array de videos para el componente SectionYoutubeShorts
     // Aquí puedes poner tus URLs de YouTube Shorts o videos normales que quieras destacar
+    //Estan entre el ultimo slide y arriba del footer/comentarios/opiniones
     const myYoutubeVideos = [
-        { url: 'https://www.youtube.com/shorts/ZKI8WlUyfBk', alt: 'Vista impresionante de la playa' },
-        { url: 'https://www.youtube.com/watch?v=J1fdV3XlMzQ', alt: 'Tour por la propiedad' },
-        { url: 'https://youtu.be/abcdEFGhijk', alt: 'Actividades acuáticas' }, // Ejemplo de youtu.be
-        { url: 'https://www.youtube.com/shorts/RGhisSfcYfc', alt: 'Paddleboard desde el cielo' },
-        { url: 'https://www.youtube.com/shorts/yw96YQaxJaY', alt: 'Navegando por Playa Panteón' },
-        { url: 'https://www.youtube.com/shorts/0KU9AK9juDM', alt: 'Vista aérea de Playa Panteón' }
+        { url: 'https://www.youtube.com/shorts/ZKI8WlUyfBk'  },
+        { url: 'httpsnosirvewww.youtube.com/watch?v=J1fdV3XlMzQ' },
+        { url: 'https://www.youtube.com/shorts/nPjr9_bTz1M' }, 
+        { url: 'https://www.youtube.com/shorts/RGhisSfcYfc' },
+        { url: 'https://www.youtube.com/shorts/yw96YQaxJaY' },
+        { url: 'https://www.youtube.com/shorts/0KU9AK9juDM' }
     ];
 
     // Array de actividades con URLs de YouTube limpias
@@ -237,19 +238,21 @@ function Home() {
                             </AnimatePresence>
 
                             {/* Botones navegación */}
-                            <button
-                                onClick={prevMedia}
-                                className="absolute left-4 top-1/2 -translate-y-1/2 text-[#000000] hover:text-[#ee23fe] text-4xl z-10"
-                                aria-label="Anterior elemento"
-                            >
-                                ‹
+                          
+                     
+        <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#000000] hover:text-[#ee23fe] text-6xl z-10"
+            onClick={prevMedia}
+            aria-label="Anterior elemento"
+        >
+          ‹
                             </button>
-                            <button
-                                onClick={nextMedia}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#000000] hover:text-[#ee23fe] text-4xl z-10"
-                                aria-label="Siguiente elemento"
-                            >
-                                ›
+                <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-[#000000] hover:text-[#ee23fe] text-6xl z-10"
+            onClick={nextMedia}
+            aria-label="Siguiente elemento"
+            >       
+            ›
                             </button>
                         </div>
 
@@ -282,7 +285,7 @@ function Home() {
                 <section className="w-full font-serif">
                     <div className="w-full mt-16 py-8 text-center">
                         <div className="">
-                            <h2 className="text-4xl font-bold text-gray-800">
+                            <h2 className="text-4xl font-bold text-black mb-4">
                                 Explora Playa Panteón
                             </h2>
                         </div>
@@ -299,23 +302,26 @@ function Home() {
                                 transition={{ duration: 0.3 }}
                                 className="md:flex rounded-xl shadow-lg overflow-hidden bg-white bg-opacity-80 relative"
                             >
-                                {/* Botón anterior */}
-                                <button
-                                    onClick={prevSlide}
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-[#000000] hover:text-[#ee23fe] text-4xl z-10"
-                                    aria-label="Anterior actividad"
-                                >
-                                    ‹
-                                </button>
+                   
 
-                                {/* Botón siguiente */}
-                                <button
-                                    onClick={nextSlide}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-[#000000] hover:text-[#ee23fe] text-4xl z-10"
-                                    aria-label="Siguiente actividad"
-                                >
-                                    ›
-                                </button>
+                                        {/* Botón anterior */}
+                        <button
+                            onClick={prevSlide}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#000000] hover:text-[#ee23fe] text-6xl z-10"
+                            aria-label="Anterior actividad"
+                        >
+                            ‹
+                        </button>
+
+                        {/* Botón siguiente */}
+                        <button
+                            onClick={nextSlide}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-[#000000] hover:text-[#ee23fe] text-6xl z-10"
+                            aria-label="Siguiente actividad"
+                        >
+                            ›
+                        </button>
+
 
                                 {/* Contenedor de la actividad (imagen o video/youtube) */}
                                 <div className="w-full md:w-2/3 h-[500px] md:h-[600px] overflow-hidden">

@@ -36,9 +36,9 @@ export default function SectionYoutubeShorts({ videos }) {
     return (
         <section className="py-12 px-4 md:px-0"> {/* Agregado padding horizontal para móviles */}
             <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-2 text-gray-800">YouTube Shorts</h2>
-                <p className="text-lg text-gray-600">
-                    Mira lo que nuestros huéspedes comparten en YouTube
+                <h2 className="text-3xl font-bold mb-2 text-black-800">YouTube Shorts</h2>
+                <p className="text-lg text-black-600">
+                    Mira nuestros últimos videos en YouTube Shorts
                 </p>
             </div>
 
